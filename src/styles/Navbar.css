@@ -1,0 +1,323 @@
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: rgba(15, 15, 30, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.navbar.scrolled {
+  padding: 1rem 0;
+  background: rgba(10, 10, 20, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(100, 255, 218, 0.2);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #64ffda;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1001;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
+}
+
+/* ============================================
+   MENU TOGGLE (Hamburguesa)
+   ============================================ */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #64ffda;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.menu-toggle span.open:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.menu-toggle span.open:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-toggle span.open:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* ============================================
+   NAV LINKS
+   ============================================ */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: #8892b0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #64ffda;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #64ffda;
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #64ffda;
+}
+
+.nav-links a.active::before {
+  width: 100%;
+}
+
+/* Números en los links */
+.number {
+  color: #64ffda;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* ============================================
+   BOTÓN CV
+   ============================================ */
+
+.btn-resume {
+  padding: 0.75rem 1.5rem !important;
+  background: transparent !important;
+  border: 2px solid #64ffda !important;
+  border-radius: 6px;
+  color: #64ffda !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100% !important;
+  background: rgba(100, 255, 218, 0.1);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-resume:hover::before {
+  left: 0;
+}
+
+.btn-resume:hover {
+  background: rgba(100, 255, 218, 0.1) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 968px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 400px;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 3rem;
+    gap: 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(100, 255, 218, 0.2);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.25rem;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .nav-links a::before {
+    height: 3px;
+  }
+
+  .number {
+    font-size: 1rem;
+  }
+
+  .btn-resume {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* Overlay cuando el menú está abierto */
+  .nav-links.active::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    width: 85%;
+    padding: 3rem 2rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================
+   ANIMACIONES ADICIONALES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Evitar scroll cuando el menú móvil está abierto */
+body:has(.nav-links.active) {
+  overflow: hidden;
+}
+
+@media (max-width: 968px) {
+  .nav-links.active a {
+    animation: slideInRight 0.4s ease-out backwards;
+  }
+
+  .nav-links.active a:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links.active a:nth-child(2) { animation-delay: 0.15s; }
+  .nav-links.active a:nth-child(3) { animation-delay: 0.2s; }
+  .nav-links.active a:nth-child(4) { animation-delay: 0.25s; }
+  .nav-links.active a:nth-child(5) { animation-delay: 0.3s; }
+  .nav-links.active a:nth-child(6) { animation-delay: 0.35s; }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

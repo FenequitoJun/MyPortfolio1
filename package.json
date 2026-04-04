@@ -1,0 +1,27 @@
+{
+  "name": "port",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "22.x" },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prebuild": "node -e \"const fs=require('fs'); const reactPkg=require('react/package.json'); console.log('React version:', reactPkg.version); const has=fs.existsSync('node_modules/react/cjs'); console.log('Has react/cjs:', has); if(has) console.log(fs.readdirSync('node_modules/react/cjs').join('\\n'))\""
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.7.1",
+    "vite": "^5.4.10",
+    "rollup": "^4.24.0"
+  }
+}
+
+
+
+
