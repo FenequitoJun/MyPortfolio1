@@ -24,8 +24,8 @@ const projects = [
 
   {
     id: 2,
-    title: 'Witell',
-    description: 'My personal portfolio website',
+    title: 'Wetell',
+    description: 'Student Schedule Notification',
     img: witell,
     tags: ['Figma', 'Wireframe'],
     category: 'Projects',
@@ -52,7 +52,7 @@ const projects = [
     tags: ['Design', 'Product','UI'],
     category: 'Task',
     demo: 'https://www.figma.com/design/m5uL0wkqsZ6ecVptswIOjw/JunFenequito_UI-Challenge?node-id=78-6&t=6dnEELhG0DwAixFl-0',
-    highlight: ['Basic math operations'],
+    highlight: ['Music', 'UI', 'Design'],
   },
 
   {
@@ -63,7 +63,7 @@ const projects = [
     tags: ['MongoDB', 'Express', 'React','Node'],
     category: 'Task',
     demo: 'https://awesometodotask.onrender.com/',
-    highlight: ['Fetch weather data', 'Live updates'],
+    highlight: ['Fetch data', 'Live updates'],
   },
 
 
